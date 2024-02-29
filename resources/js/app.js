@@ -6,17 +6,18 @@
 
 import './bootstrap';
 import { createApp } from 'vue';
-
+import router from './router';
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
  * registering components with the application instance so they are ready
  * to use in your application's views. An example is included for you.
  */
 
-const app = createApp({});
 
-import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);
+
+import Welcome from './Welcome.vue';
+const app = createApp({});
+app.component('welcome', Welcome);
 
 /**
  * The following block of code may be used to automatically register your
@@ -36,4 +37,4 @@ app.component('example-component', ExampleComponent);
  * scaffolding. Otherwise, you will need to add an element yourself.
  */
 
-app.mount('#app');
+app.use(router).mount('#app');
